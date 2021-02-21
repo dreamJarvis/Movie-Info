@@ -1,3 +1,3 @@
 <?php
-include_once('./js/app.js');
+include_once('./index.html');
 ?>
