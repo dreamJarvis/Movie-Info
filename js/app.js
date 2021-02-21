@@ -15,7 +15,7 @@ function searchMovie() {
         tmpName += movieName[i];
     }
 
-    fetch(`http://www.omdbapi.com/?apikey=d03230c8&t=${tmpName}`, {
+    fetch(`https://www.omdbapi.com/?apikey=d03230c8&t=${tmpName}`, {
             method: 'GET'
         })
         .then((res) => {
