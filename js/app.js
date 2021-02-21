@@ -18,11 +18,14 @@ function searchMovie() {
     fetch(`https://www.omdbapi.com/?apikey=d03230c8&t=${tmpName}`, {
             method: 'GET'
         })
-        .then((res) => {
-            return res.json();
-        })
+        .then(res => res.json())
         .then((data) => {
-            console.log(data);
+            if (data.Response == 'False') {
+                throw Error(data.Response); // error handling
+            }
+            return data;
+        })
+        .then(data => {
             let output =
                 `
                 <div class="row">
@@ -142,5 +145,17 @@ function searchMovie() {
             </div>
             `;
             document.querySelector('#movieInfo').innerHTML = output;
+        })
+        .catch((err) => {
+            document.querySelector('#movieInfo').innerHTML = '';
+            let errMsg = new bootstrap.Modal(document.getElementById('errorMsg'), {
+                keyboard: false
+            });
+            errMsg.show();
+
+            // clear's the input bay, when modal closes
+            document.querySelector("#errorMsg").addEventListener('hide.bs.modal', (e) => {
+                document.querySelector('#movieName').value = "";
+            })
         });
 };
