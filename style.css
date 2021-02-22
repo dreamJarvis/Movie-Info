@@ -19,3 +19,69 @@ img {
 hr {
     color: #fff;
 }
+
+#movieInfo {
+    margin: auto;
+    width: 80%
+}
+
+
+/* responsive design */
+
+@media(max-width:1300px) {
+    #movieInfo {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+    #box-1 {
+        min-width: 20%;
+        margin-bottom: 5%;
+    }
+    #box-2 p {
+        text-align: center;
+        min-width: 100%;
+    }
+    #box-2 {
+        margin: auto;
+        max-width: 50%;
+    }
+}
+
+@media(max-width:1005px) {
+    #movieInfo {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+    #box-1 {
+        min-width: 100%;
+        margin-bottom: 5%;
+    }
+    #box-2 {
+        margin: auto;
+        max-width: 70%;
+    }
+}
+
+@media(max-width:760px) {
+    #movieInfo {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+    #box-1 {
+        min-width: 100%;
+        margin-bottom: 5%;
+    }
+    #box-2 p {
+        text-align: center;
+        min-width: 100%;
+    }
+    #box-2 {
+        margin: auto;
+        min-width: 100%;
+        max-height: 400px;
+        overflow: scroll;
+    }
+}
